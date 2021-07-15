@@ -1,5 +1,7 @@
 package com.example.demo.patterns.behavioral.mediator;
 
+
+
 public abstract class AbstractUser {
 
 	protected ChatMediator mediator;
