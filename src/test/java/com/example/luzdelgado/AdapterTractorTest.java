@@ -6,6 +6,7 @@ import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import com.example.demo.patterns.structural.adapter.Tractor;
@@ -42,13 +43,26 @@ class AdapterTractorTest {
 //	}
 
 	@Test
+	@DisplayName("Test para probar setSpeed")
 	void testSetSpeed() {
-		fail("Not yet implemented");
+		tractor.setSpeed(3);
+		assertEquals(3, tractor.getSpeed());
+
 	}
 
 	@Test
-	void testChangeMode() {
-		fail("Not yet implemented");
+	@DisplayName("Test que confirma el cambio a modo 1 de velocidad")
+	void testChangeModeVel1() {
+		tractor.changeMode(1);
+		assertEquals(5, tractor.getSpeed());	
 	}
-
+	
+	@Test
+	@DisplayName("Test que confirma el cambio a modo 2 de velocidad")
+	void testChangeModeVel2() {
+		tractor.changeMode(2);
+		assertEquals(15, tractor.getSpeed());	
+	}
+	
+	//ToDo - haria falta un test para el default?
 }
