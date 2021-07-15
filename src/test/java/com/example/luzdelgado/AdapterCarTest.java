@@ -11,14 +11,13 @@ import org.junit.jupiter.api.Test;
 
 import com.example.demo.patterns.structural.adapter.Car;
 
- class AdapterCarTest {
- 
+class AdapterCarTest {
+
 	Car coche = new Car();
-	
+
 	@BeforeAll
 	static void setUpBeforeClass() throws Exception {
 		System.out.println("setUpBeforeClass");
-
 	}
 
 	@AfterAll
@@ -30,6 +29,7 @@ import com.example.demo.patterns.structural.adapter.Car;
 	@BeforeEach
 	void setUp() throws Exception {
 		System.out.println("setUp");
+
 	}
 
 	@AfterEach
@@ -43,25 +43,36 @@ import com.example.demo.patterns.structural.adapter.Car;
 	void testSpeedUpPositive() {
 		double velActual = coche.getSpeed();
 		coche.speedUp(5);
-		assertEquals(velActual+5, coche.getSpeed());
+		assertEquals(velActual + 5, coche.getSpeed());
 	}
-	
+
 	@Test
 	@DisplayName("Test de aumento de velocidad con numeros negativos")
 	void testSpeedUpNegative() {
 		double velActual = coche.getSpeed();
 		coche.speedUp(-3);
-		assertEquals(velActual-3, coche.getSpeed());
+		assertEquals(velActual - 3, coche.getSpeed());
+	}
+	
+	@Test
+	@DisplayName(" ")
+	void testSpeedUpZero() {
+		double velActual = coche.getSpeed();
+		coche.speedUp(0);
+		assertEquals(0, velActual);
 	}
 
 //	@Test
 //	void testGetSpeed() {
-//		
+//¿cómo hago un test que me delvuelva el valor que extraigo sea el correcto? - cómo se testea un getter
 //	}
-//
-//	@Test
-//	void testSetSpeed() {
-//		
-//	}
-	
+
+	@Test
+	@DisplayName("Test para probar setSpeed")
+	void testSetSpeed() {
+		coche.setSpeed(5);
+		assertEquals(5, coche.getSpeed());
+
+	}
+
 }
