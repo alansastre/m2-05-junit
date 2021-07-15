@@ -1,5 +1,11 @@
 package com.example.alansastre;
 
-public class SmartDeviceFactoryTest {
+import org.junit.jupiter.api.Test;
 
+class SmartDeviceFactoryTest {
+
+	@Test
+	void createByTypeSmartphone() {
+		System.out.println("Test");
+	}
 }
