@@ -7,7 +7,7 @@ public abstract class AbstractUser {
 	protected ChatMediator mediator;
 	protected String name;
 	
-	protected AbstractUser(ChatMediator mediator, String name) {
+	public AbstractUser(ChatMediator mediator, String name) {
 		this.mediator = mediator;
 		this.name = name;
 		this.mediator.addUser(this);

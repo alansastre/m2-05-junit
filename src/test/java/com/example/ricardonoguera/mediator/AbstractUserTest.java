@@ -1,14 +1,21 @@
 package com.example.ricardonoguera.mediator;
 
+import com.example.demo.patterns.behavioral.mediator.*;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
+
+
 class AbstractUserTest {
+	
+	
 
 	@BeforeAll
 	static void setUpBeforeClass() throws Exception {
@@ -25,20 +32,7 @@ class AbstractUserTest {
 	@AfterEach
 	void tearDown() throws Exception {
 	}
-
-	@Test
-	void testAbstractUser() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	void testSend() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	void testReceive() {
-		fail("Not yet implemented");
-	}
+	
+	
 
 }

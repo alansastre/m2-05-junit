@@ -4,7 +4,7 @@ package com.example.demo.patterns.behavioral.mediator;
 
 public class User extends AbstractUser{
 
-	protected User(ChatMediator mediator, String name) {
+	public User(ChatMediator mediator, String name) {
 		super(mediator, name);
 	}
 
