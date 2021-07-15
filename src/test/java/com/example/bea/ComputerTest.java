@@ -10,8 +10,7 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import com.example.demo.patterns.behavioral.observer.Computer;
-import com.example.demo.patterns.behavioral.observer.WeatherObserver;
-import com.example.demo.patterns.behavioral.observer.WeatherType;
+
 
 class ComputerTest {
 
