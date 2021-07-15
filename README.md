@@ -39,6 +39,26 @@ Tareas del desarrollador
 13. Orden en los test
 15. Suites de test: + Filtros
 
+## Tareas
+
+
+•	Jordi: iterator
+•	Arantza: singleton
+•	Beatriz: observer
+•	Iván: state
+•	Javier: strategy
+•	Juan Carlos: builder
+•	Juan Diego: mediator
+•	Luz: adapter
+•	Manuel: prototype
+•	Marina: adapter
+•	Mario: state
+•	Miguel: decorator
+•	Ricardo: mediator
+•	Sergio: strategy
+•	Alan: smartdevice jersey
+
+
 
 
 
