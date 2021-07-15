@@ -6,13 +6,14 @@ import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-import com.example.demo.patterns.structural.adapter.Tractor;
+import com.example.demo.patterns.structural.adapter.TractorAdapter;
 
 class AdapterTractorAdapterTest {
-	
-	Tractor tractor = new Tractor();
+
+	TractorAdapter tractorAdapter = new TractorAdapter();
 
 	@BeforeAll
 	static void setUpBeforeClass() throws Exception {
@@ -35,10 +36,24 @@ class AdapterTractorAdapterTest {
 
 	}
 
+	// He cambiado tractor a publico para poder acceder al método getSpeed del
+	// tractor que tiene tractorAdapter
 	@Test
-	void testSpeedUp() {
-		fail("Not yet implemented");
+	@DisplayName("La velocidad es menor a 15 se cambia a velocidad 1")
+	void testSpeedUpLessThan15() {
+		tractorAdapter.speedUp(10);
+		assertEquals(5, tractorAdapter.tractor.getSpeed());
 
+	// Preguntarle a Alan si se puede a hacer más de un assert por test y por tanto si esto seria correcto y buenas practicas
+		tractorAdapter.speedUp(21);
+		assertEquals(15, tractorAdapter.tractor.getSpeed());
 	}
 
+	@Test
+	@DisplayName("La velocidad es mayor a 15 se cambia a velocidad 2")
+	void testSpeedUpGreaterThan15() {
+		tractorAdapter.speedUp(21);
+		assertEquals(15, tractorAdapter.tractor.getSpeed());
+
+	}
 }
