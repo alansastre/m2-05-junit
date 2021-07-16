@@ -1,5 +1,7 @@
 package com.example.demo.patterns.behavioral.mediator;
 
+
+
 public interface ChatMediator {
 
     public void sendMessage(String message, AbstractUser user);

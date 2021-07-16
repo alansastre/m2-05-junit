@@ -3,6 +3,8 @@ package com.example.demo.patterns.behavioral.mediator;
 import java.util.ArrayList;
 import java.util.List;
 
+
+
 public class Telegram implements ChatMediator{
 
 	List<AbstractUser> users = new ArrayList<>();
@@ -25,5 +27,15 @@ public class Telegram implements ChatMediator{
 	public void removeUser(AbstractUser user) {
 		this.users.remove(user);
 	}
+
+	public List<AbstractUser> getUsers() {
+		return users;
+	}
+
+	public void setUsers(List<AbstractUser> users) {
+		this.users = users;
+	}
+	
+	
 
 }
