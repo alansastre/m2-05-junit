@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import com.example.demo.patterns.behavioral.iterator.Book;
@@ -39,24 +40,26 @@ class JUnitTestBookShopItinerator extends TestCase {
 	}
 	
 	@Test
-    void testIterator() {
+	@DisplayName("Massive Itinerator")
+    void testMassiveIterator() {
 
-        int randomBooksToCreate = (int)Math.round(Math.random()*(1000));
+        int randomBooksToCreate = (int)Math.round(Math.random()*(100)+1);
 
         List<Book> randomSampleBooks = addSampleListBooksTest(randomBooksToCreate);
         Iterator<Book> listBooksIterator = randomSampleBooks.iterator();
 
         for (int actualBook = 1; actualBook <= (randomSampleBooks.size()); actualBook++) {
 
-            
         	boolean haveNextItemInList = listBooksIterator.hasNext();
+        	
+        	System.out.println("TEST MASSIVE ITINERAOTR BOOK");
         	
         	System.out.println("Actual Position: " + String.valueOf(actualBook)
             + " of "
             + String.valueOf(randomSampleBooks.size()));
 
             System.out.println(listBooksIterator.next().toString());
-
+            
             assertEquals
             ("Position fail: "
             + String.valueOf(actualBook)
@@ -66,4 +69,32 @@ class JUnitTestBookShopItinerator extends TestCase {
         }
 
     }
+	
+	@Test
+	@DisplayName("Unique Itinerator")
+    void testUniqueIterator() {
+
+        List<Book> randomSampleBook = addSampleListBooksTest(1);
+        Iterator<Book> listBookIterator = randomSampleBook.iterator();
+            
+        	boolean haveNextItemInList = listBookIterator.hasNext();
+        	
+        	String nextBook = listBookIterator.next().toString();
+
+            System.out.println(nextBook);
+            
+            assertEquals (nextBook, true, haveNextItemInList);
+    }
+
+	
+	@Test
+	@DisplayName("Null Itinerator")
+    void testNullIterator() {
+        List<Book> randomSampleBook = new ArrayList<Book>();
+        Iterator<Book> listBookIterator = randomSampleBook.iterator();
+            
+        	boolean haveNextItemInList = listBookIterator.hasNext();
+            
+            assertEquals(false, haveNextItemInList);
+	}
 }
