@@ -21,6 +21,7 @@ public class ProcessingState implements OrderState {
 	public void previous(Order order) {
 
 		System.out.println("Root state");
+		order.setState(null);
 	}
 
 }
