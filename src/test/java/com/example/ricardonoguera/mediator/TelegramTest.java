@@ -6,6 +6,7 @@ import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import com.example.demo.patterns.behavioral.mediator.ChatMediator;
@@ -26,12 +27,14 @@ class TelegramTest {
 //	}
 
 	@Test
+	@DisplayName("Añade usuarios")
 	void testAddUser() {
 		assertEquals(2, chatTelegram.getUsers().size());
 		User user3 = new User(chatTelegram,"ElUsuario3");
 		assertEquals(3, chatTelegram.getUsers().size());
 	}
 	@Test
+	@DisplayName("Elimina usuarios")
 	void testRemoveUser() {
 		assertEquals(2, chatTelegram.getUsers().size());
 		chatTelegram.removeUser(user2);
