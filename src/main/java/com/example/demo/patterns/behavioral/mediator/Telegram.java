@@ -28,4 +28,14 @@ public class Telegram implements ChatMediator{
 		this.users.remove(user);
 	}
 
+	public List<AbstractUser> getUsers() {
+		return users;
+	}
+
+	public void setUsers(List<AbstractUser> users) {
+		this.users = users;
+	}
+	
+	
+
 }

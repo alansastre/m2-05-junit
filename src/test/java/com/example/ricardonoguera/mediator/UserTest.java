@@ -26,7 +26,7 @@ class UserTest {
 	
     
 	@Test
-    @DisplayName("Envio y recepción")
+    @DisplayName("Envío y recepción")
     void envioRecepción() {
 		chat.addUser(user1);
 	    chat.addUser(user2);
