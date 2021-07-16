@@ -5,6 +5,7 @@ import org.junit.jupiter.api.Test;
 import com.example.demo.service.SmartDeviceFactory;
 import com.example.demo.domain.SmartDevice;
 import com.example.demo.domain.SmartPhone;
+import com.example.demo.domain.SmartWatch;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -25,25 +26,38 @@ class SmartDeviceFactoryTest {
 		assertEquals(1L, phone.getId());
 	}
 	
-//	@Test
-//	void testSmartPhoneAttributes() {
-//		SmartDevice phone = SmartDeviceFactory.createByType("phone");
-//		assertNotNull(phone);
-//		assertTrue(phone instanceof SmartPhone);
-//	
-//	}
-//	
-//	@Test
-//	void testSmartPhoneRelationships() {
-//		SmartDevice phone = SmartDeviceFactory.createByType("phone");
-//		assertNotNull(phone);
-//		assertTrue(phone instanceof SmartPhone);
-//	
-//	}
+	
+	@Test
+	void testSmartWatchInstance() {
+		// 1. preparacion
+		
+		// 2. ejecucion del codigo a testear
+		SmartDevice watch = SmartDeviceFactory.createByType("watch");
+		
+		// 3. verificaciones
+		assertNotNull(watch);
+		assertTrue(watch instanceof SmartWatch);
+		assertEquals("Default smartwatch", watch.getName());
+		assertEquals(1L, watch.getId());
+	}
+	
+	@Test
+	void testDefaultInstance() {
+		
+		// 2. ejecucion del codigo a testear
+		Exception exception = assertThrows(
+				IllegalArgumentException.class, 
+				() -> SmartDeviceFactory.createByType("notexists")
+				);
+		
+		assertEquals("Unexpected value: notexists", exception.getMessage());
+
+	}
 	
 	
-//	@Test
-//	void createByTypeWatch() {
-//		SmartDeviceFactory.createByType("watch");
-//	}
+	
+	
+	
+	
+	
 }
