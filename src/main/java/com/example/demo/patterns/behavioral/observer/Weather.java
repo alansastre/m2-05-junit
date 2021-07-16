@@ -34,4 +34,5 @@ public class Weather {
             observer.update(this.currentWeather);
         }
     }
+    
 }
