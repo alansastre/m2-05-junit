@@ -62,11 +62,6 @@ class AdapterCarTest {
 		assertEquals(0, velActual);
 	}
 
-//	@Test
-//	void testGetSpeed() {
-//¿cómo hago un test que me delvuelva el valor que extraigo sea el correcto? - cómo se testea un getter
-//	}
-
 	@Test
 	@DisplayName("Test para probar setSpeed")
 	void testSetSpeed() {
