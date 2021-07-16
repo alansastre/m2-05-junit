@@ -23,10 +23,10 @@ public class TestBuilder {
 	@Test
 	@DisplayName("Creación de User con Set")
 	void createUserConSet() {
-		User user = user.setId(2L), 
-				setFirstName("juan"), 
-				setLastName("Antonio"), 
-				setEmail("ja@yahoo.es"), 
+		User user = User.setId(2L).
+				setFirstName("juan").
+				setLastName("Antonio").
+				setEmail("ja@yahoo.es").
 				setMarried(true);
 		assertEquals(2L, user.getId() );
 		assertEquals("juan", user.getFirstName());
