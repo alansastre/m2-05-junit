@@ -1,26 +1,29 @@
 package com.example.JuanCarlosGarrido;
 
+import static org.junit.Assert.assertEquals;
+
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import com.example.demo.patterns.creational.builder.User;
-import com.example.demo.patterns.creational.builder.User.Builder;
 
 public class TestBuilder {
 	
 	@Test
 	@DisplayName("Creación de User")
 	void createUser() {
-		Builder user = new Builder();
-		user.equals(new User(2L,"","","", true));
-			
+		User user = new User(2L,"juan","Antonio","ja@yahoo.es", true);
+		assertEquals(2L, user.getId() );
+		assertEquals("jjuan", user.getFirstName());
+		assertEquals("Antonio", user.getLastName());
+		assertEquals("ja@yahoo.es", user.getEmail());
+		assertEquals(true, user.getMarried());
 	}
 	
 	@Test
 	@DisplayName("Creación de tipo User")
 	void createByTypeBuilder(){
-		//User Builder(); 
-		//Builder.class.; 
+		User user = new User(); 
 	}
 	
 	
