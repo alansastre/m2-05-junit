@@ -21,6 +21,21 @@ public class TestBuilder {
 	}
 	
 	@Test
+	@DisplayName("Creación de User con Set")
+	void createUserConSet() {
+		User user = user.setId(2L), 
+				setFirstName("juan"), 
+				setLastName("Antonio"), 
+				setEmail("ja@yahoo.es"), 
+				setMarried(true);
+		assertEquals(2L, user.getId() );
+		assertEquals("juan", user.getFirstName());
+		assertEquals("Antonio", user.getLastName());
+		assertEquals("ja@yahoo.es", user.getEmail());
+		assertEquals(true, user.getMarried());
+	}
+	
+	@Test
 	@DisplayName("Creación de tipo User")
 	void createByTypeBuilder(){
 		User user = new User.Builder().build();
