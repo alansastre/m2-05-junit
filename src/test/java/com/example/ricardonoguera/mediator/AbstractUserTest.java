@@ -19,7 +19,7 @@ class AbstractUserTest {
 	ChatMediator chat = new Telegram();
     AbstractUser user1 = new User(chat, "ElUsuario1");
     AbstractUser user2 = new User(chat, "ElUsuario2");
-
+    
 
 	
 	@Test
@@ -64,10 +64,7 @@ class AbstractUserTest {
         assertNotEquals(user1, user2);
     }
 	
-	@Test
-    @DisplayName("Recibe el mensaje OK")
-    void test5() {
-        String mensaje = "Mensaje de bienvenida";
-        assertEquals(mensaje, user1);
-    }
+	
+	
+	
 }

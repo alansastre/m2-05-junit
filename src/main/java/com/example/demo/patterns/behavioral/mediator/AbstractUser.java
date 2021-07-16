@@ -13,7 +13,7 @@ public abstract class AbstractUser {
 		this.mediator.addUser(this);
 	}
 	
-    public abstract void send(String message);
+     public abstract void send(String message);
 
-    public abstract void receive(String message);
+      public abstract void receive(String message);
 }
