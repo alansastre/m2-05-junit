@@ -42,18 +42,18 @@ class AdapterTractorAdapterTest {
 	@DisplayName("La velocidad es menor a 15 se cambia a velocidad 1")
 	void testSpeedUpLessThan15() {
 		tractorAdapter.speedUp(10);
-		assertEquals(5, tractorAdapter.tractor.getSpeed());
+		assertEquals(5, tractorAdapter.getSpeed());
 
 	// Preguntarle a Alan si se puede a hacer más de un assert por test y por tanto si esto seria correcto y buenas practicas
 		tractorAdapter.speedUp(21);
-		assertEquals(15, tractorAdapter.tractor.getSpeed());
+		assertEquals(15, tractorAdapter.getSpeed());
 	}
 
 	@Test
 	@DisplayName("La velocidad es mayor a 15 se cambia a velocidad 2")
 	void testSpeedUpGreaterThan15() {
 		tractorAdapter.speedUp(21);
-		assertEquals(15, tractorAdapter.tractor.getSpeed());
+		assertEquals(15, tractorAdapter.getSpeed());
 
 	}
 }

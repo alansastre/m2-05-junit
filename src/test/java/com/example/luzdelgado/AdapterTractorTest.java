@@ -13,7 +13,7 @@ import com.example.demo.patterns.structural.adapter.Tractor;
 
 class AdapterTractorTest {
 	
-	Tractor tractor = new Tractor();
+	Tractor tractor;
 
 
 	@BeforeAll
@@ -29,6 +29,7 @@ class AdapterTractorTest {
 
 	@BeforeEach
 	void setUp() throws Exception {
+		tractor = new Tractor(); // esto inicializa el tractor nuevo para cada test
 		System.out.println("setUp");
 	}
 
@@ -64,5 +65,11 @@ class AdapterTractorTest {
 		assertEquals(15, tractor.getSpeed());	
 	}
 	
-	//ToDo - haria falta un test para el default?
+
+	@Test
+	@DisplayName("Test que confirma modo default")
+	void testChangeModeDefaultCase() {
+		tractor.changeMode(3);
+		assertEquals(0.0, tractor.getSpeed());	
+	}
 }
