@@ -34,4 +34,22 @@ public class Weather {
             observer.update(this.currentWeather);
         }
     }
+
+	public WeatherType getCurrentWeather() {
+		return currentWeather;
+	}
+
+	public List<WeatherObserver> getObservers() {
+		return observers;
+	}
+
+	public void setCurrentWeather(WeatherType currentWeather) {
+		this.currentWeather = currentWeather;
+	}
+
+	public void setObservers(List<WeatherObserver> observers) {
+		this.observers = observers;
+	}
+    
+    
 }

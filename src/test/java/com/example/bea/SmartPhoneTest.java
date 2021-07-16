@@ -11,12 +11,13 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import com.example.demo.patterns.behavioral.observer.Computer;
+import com.example.demo.patterns.behavioral.observer.SmartPhone;
 import com.example.demo.patterns.behavioral.observer.WeatherType;
 
+class SmartPhoneTest {
 
-class ComputerTest {
-    
-	Computer computer = new Computer();
+	
+	SmartPhone smartPhone = new SmartPhone();
 	@BeforeAll
 	static void setUpBeforeClass() throws Exception {
 	}
@@ -34,35 +35,33 @@ class ComputerTest {
 	}
 
 	@Test
-	@DisplayName("Comprobar el nombre del tiempo es correcto")
-	void testTipoTiempoCLOUDY() {
+	@DisplayName("Comprobar notificacion al SmartPhone es CLOUDY")
+	void testSmartPhoneCLOUDY() {
 		
 		WeatherType type = WeatherType.CLOUDY;
-		computer.update(type);
+		smartPhone.update(type);
 		assertTrue(type instanceof WeatherType);
 		
 	}
 	
 	@Test
-	@DisplayName("Comprobar el nombre del tiempo es correcto")
-	void testTipoTiempoSUNNY() {
+	@DisplayName("Comprobar notificacion al SmartPhone es SUNNY")
+	void testSmartPhoneSUNNY() {
 		
 		WeatherType type = WeatherType.SUNNY;
-		computer.update(type);
+		smartPhone.update(type);
 		assertTrue(type instanceof WeatherType);
 		
 	}
 	
 	@Test
-	@DisplayName("Comprobar el nombre del tiempo es correcto")
-	void testTipoTiempoRAINY() {
+	@DisplayName("Comprobar notificacion al SmartPhone es RAINY")
+	void testSmartPhoneRAINY() {
 		
 		WeatherType type = WeatherType.RAINY;
-		computer.update(type);
+		smartPhone.update(type);
 		assertTrue(type instanceof WeatherType);
 		
 	}
-	
-}	
-	
-	
+
+}
