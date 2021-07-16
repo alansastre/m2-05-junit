@@ -6,6 +6,7 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import com.example.demo.patterns.creational.builder.User;
+import com.example.demo.patterns.creational.builder.User.Builder;
 
 public class TestBuilder {
 	
@@ -37,8 +38,8 @@ public class TestBuilder {
 	}
 	
 	@Test
-	@DisplayName("Creación de User con Set")
-	void createUserConSet() {
+	@DisplayName("Creación de User con Builder")
+	void createUserConBuilder() {
 		User user = new User.Builder().setId(5L).
 				setFirstName("juan").
 				setLastName("Antonio").
@@ -52,21 +53,20 @@ public class TestBuilder {
 	}
 	
 	@Test
-	@DisplayName("Creación de tipo User")
-	void createByTypeBuilder(){
-		User user = new User.Builder().build();
+	//
+	@DisplayName("Creación de User vacio")
+	void createEmptyUser(){
+		Builder user = new User.Builder();
 		assertNull(user.getId());
-		User user2 = new User.Builder().setId(3L).build();
-		assertEquals(3L, user2.getId());
-		User user3 = new User.Builder().setId(3L).setFirstName("juan").build();
-		assertEquals("juan", user3.getFirstName());
-		User user4 = new User.Builder().setId(3L).setFirstName("juan").setLastName("Antonio").build();
-		assertEquals("Antonio", user4.getLastName());
-		User user5 = new User.Builder().setId(3L).setFirstName("juan").setLastName("Antonio").setEmail("ja@yahoo.es").build();
-		assertEquals("ja@yahoo.es", user5.getEmail());
-		User user6 = new User.Builder().setId(3L).setFirstName("juan").setLastName("Antonio").setEmail("ja@yahoo.es").setMarried(true).build();
-		assertEquals(true, user6.getMarried());
-	}
+		Builder user2 = new User.Builder();
+		assertNull(user2.getFirstName());
+		Builder user3 = new User.Builder();
+		assertNull(user3.getLastName());
+		Builder user4 = new User.Builder();
+		assertNull(user4.getEmail());
+		Builder user5 = new User.Builder();
+		assertNull(user5.getMarried());
+		}
 	
 	
 }
