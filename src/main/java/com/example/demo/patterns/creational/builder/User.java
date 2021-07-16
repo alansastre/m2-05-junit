@@ -70,7 +70,7 @@ public class User {
 		private String email;
 		private Boolean married;
 
-		User build() {
+		public User build() {
 			// En caso de necesitar obligar a rellenar ciertas propiedades
 //			if(this.id == null || this.email == null)
 //				throws FieldsMandatory();
