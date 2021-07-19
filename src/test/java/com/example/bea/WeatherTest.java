@@ -11,6 +11,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
+import com.example.demo.patterns.behavioral.observer.Computer;
 import com.example.demo.patterns.behavioral.observer.SmartPhone;
 import com.example.demo.patterns.behavioral.observer.Weather;
 import com.example.demo.patterns.behavioral.observer.WeatherType;
@@ -18,6 +19,8 @@ import com.example.demo.patterns.behavioral.observer.WeatherType;
 class WeatherTest {
 
 	Weather weather  = new Weather();
+	Computer computer = new Computer();
+	SmartPhone smartPhone = new SmartPhone();
 	
 	@BeforeAll
 	static void setUpBeforeClass() throws Exception {
@@ -71,20 +74,55 @@ class WeatherTest {
 	@DisplayName("verificamos el cambio de tiempo a RAINY")
 	void testChangeWeather() {
 		SmartPhone smart = new SmartPhone();
-		WeatherType currentWeather = WeatherType.RAINY;
-		weather.changeWeather(currentWeather);
-		assertEquals("RAINY",currentWeather);
-	
+		weather.changeWeather(WeatherType.RAINY);
+		assertEquals(WeatherType.RAINY,weather.getCurrentWeather());
 		
+	}
+
+
+	@Test
+	@DisplayName("verificamos el cambio de tiempo a RAINY")
+	void testChangeWeather() {
+		SmartPhone smart = new SmartPhone();
+		weather.changeWeather(WeatherType.RAINY);
+		assertEquals(WeatherType.RAINY,weather.getCurrentWeather());
+		
+	}
+	
+	
+	@Test
+	@DisplayName("verificamos el cambio de tiempo a RAINY")
+	void testChangeWeather() {
+		SmartPhone smart = new SmartPhone();
+		weather.changeWeather(WeatherType.RAINY);
+		assertEquals(WeatherType.RAINY,weather.getCurrentWeather());
+		
+	}
+	
+	
+	
+	
+	
+	
+	@Test
+	@DisplayName("verificamos notificacion a los observador SmartPhone")
+	void testNotifyObserversSmartPhone() {
+		SmartPhone smart = new SmartPhone();
+		weather.addObserver(smart);
+		weather.changeWeather(WeatherType.RAINY);
+		
+		assertEquals(smart.getNotificationsSmartPhone(),weather.changeWeather(WeatherType.RAINY));
 	}
 	
 	@Test
-	@DisplayName("verificamos notificacion a los observadores")
-	void testnotifyObservers() {
+	@DisplayName("verificamos notificacion a los observador Computer")
+	void testNotifyObserversComputer() {
+		Computer computer = new Computer();
+		weather.addObserver(computer);
+		weather.changeWeather(WeatherType.RAINY);
+		computer.getNotificationsComputer();
 		
 	}
-	
-	
 	
 	
 
