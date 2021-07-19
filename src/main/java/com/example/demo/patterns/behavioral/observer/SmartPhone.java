@@ -5,11 +5,11 @@ import java.util.List;
 
 public class SmartPhone implements WeatherObserver{
 	
-	List<String> notifications = new ArrayList<>();
+	List<String> notificationsSmartPhone = new ArrayList();
+	
     @Override
     public void update(WeatherType type) {
         System.out.println("Smartphone has been notified of weather change: " + type);
-        notifications.add("Smartphone has been notified of weather change: " + type);
-        
+        notificationsSmartPhone.add("Smartphone has been notified of weather change: " + type);
     }
 }
