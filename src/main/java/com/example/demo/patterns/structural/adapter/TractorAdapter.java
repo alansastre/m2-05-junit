@@ -13,5 +13,10 @@ public class TractorAdapter implements Movable{
 		}
 		
 	}
+	
+	public double getSpeed() {
+		return this.tractor.getSpeed();
+	}
+	
 
 }
