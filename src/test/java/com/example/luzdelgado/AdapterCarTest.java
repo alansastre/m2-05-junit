@@ -1,6 +1,6 @@
 package com.example.luzdelgado;
 
-<<<<<<< HEAD
+
 import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.AfterAll;
@@ -70,8 +70,4 @@ class AdapterCarTest {
 		assertEquals(5, coche.getSpeed());
 
 	}
-=======
-public class AdapterCarTest {
->>>>>>> refs/heads/master
-
 }
