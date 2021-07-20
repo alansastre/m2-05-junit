@@ -7,29 +7,29 @@ import java.time.LocalDateTime;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-import com.example.demo.patterns.behavioral.state.DeliveredState;
 import com.example.demo.patterns.behavioral.state.Order;
 import com.example.demo.patterns.behavioral.state.OrderState;
+import com.example.demo.patterns.behavioral.state.ShippedState;
 
-class DeliveredStateTest extends BaseTest{
+class ShippedStateTest extends BaseTest{
 
-	DeliveredState deliveredState = new DeliveredState();
+	ShippedState shippedState = new ShippedState();
 	Order order = new Order(1L, LocalDateTime.now());
 	
-	@DisplayName("Estado siguiente con pedido entregado.") 
+	@DisplayName("Estado siguiente con pedido enviado.") 
 	@Test
-	void deliveredStateNextTest() {
+	void ShippedStateNextTest() {
 		OrderState orderState= order.getState();
-		deliveredState.next(order);
+		shippedState.next(order);
 		
 		assertNotEquals(orderState, order.getState()); 
 	}
 	
-	@DisplayName("Estado anterior con pedido entregado.") 
+	@DisplayName("Estado anterior con pedido enviado.") 
 	@Test
-	void deliveredStatePreviousTest() {
+	void ShippedStatePreviousTest() {
 		OrderState orderState= order.getState();
-		deliveredState.previous(order);
+		shippedState.previous(order);
 		
 		assertNotEquals(orderState, order.getState()); 
 	}

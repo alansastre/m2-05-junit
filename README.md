@@ -58,6 +58,26 @@ Tareas del desarrollador
 •	Sergio: strategy
 •	Alan: smartdevice jersey
 
+## Proceso
+
+* Clonar repositorio con todas las ramas
+* Inicializar Git Flow
+* Crear feature con nombreapellido
+* Crear paquete en src/test/java/com/example/nombreapellido
+* Crear clases de test
+
+Cobertura actual: 8.8 %
+Objetivo de grupo: 80%
+
+
+Proceso de merge
+
+* Commit definitivo de feature
+* Checkout a develop y pull 
+* Checkout feature
+* Finish feature
+
+
 
 
 
