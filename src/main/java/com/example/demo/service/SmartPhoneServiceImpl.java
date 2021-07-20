@@ -16,19 +16,16 @@ import com.example.demo.domain.pieces.RAM;
 
 public class SmartPhoneServiceImpl implements SmartPhoneService{
 
-
-	/**
-	 * Emulates a database with java hashmap
-	 */
-    private static final Map<Long, SmartPhone> smartphones = new HashMap<>();
-
-    static{ // hardcoded demo data
-    	
+    private final Map<Long, SmartPhone> smartphones = new HashMap<>();
+    
+	public SmartPhoneServiceImpl() {
+		
+		// demo data
 		SmartPhone phone1 = new SmartPhone(1L, "One plus 9", 
 				new RAM(1L, "DDR4", 8),
 				new Battery(1L, 4500.0),
 				new CPU(1L, 4),
-				true,
+				false,
 				new Camera(1L, "front camera", 12.5));
 		
 		SmartPhone phone2 = new SmartPhone(2L, "IPhone X", 
@@ -49,9 +46,8 @@ public class SmartPhoneServiceImpl implements SmartPhoneService{
 		smartphones.put(1L, phone1);
 		smartphones.put(2L, phone2);
     	smartphones.put(3L, phone3);
+	}
 
-    }
-    
     @Override
     public Integer count() {
         return smartphones.keySet().size();
