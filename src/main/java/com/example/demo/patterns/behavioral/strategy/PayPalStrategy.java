@@ -37,7 +37,7 @@ public class PayPalStrategy implements PaymentStrategy{
     }
 
     @Override
-    public void pay(double amount) {
-
+    public double pay(double amount) {
+    	return amount * 5;
     }
 }

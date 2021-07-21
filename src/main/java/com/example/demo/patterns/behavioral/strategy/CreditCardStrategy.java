@@ -46,7 +46,7 @@ public class CreditCardStrategy implements PaymentStrategy {
     }
 
     @Override
-    public void pay(double amount) {
+    public double pay(double amount) {
     	
     	double amount2;
     	if(amount <= 0) {
@@ -56,5 +56,6 @@ public class CreditCardStrategy implements PaymentStrategy {
             System.out.println(amount + " paid with credir card");
 
     	}
+    	return amount * 2;
     }
 }
