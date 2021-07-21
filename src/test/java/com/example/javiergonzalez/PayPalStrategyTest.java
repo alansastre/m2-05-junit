@@ -17,29 +17,36 @@ class PayPalStrategyTest {
 
 	PayPalStrategy paypal = new PayPalStrategy("www.google.com","lil","74125874125871");
 	
-	@BeforeAll
-	static void setUpBeforeClass() throws Exception {
-	}
+//	@BeforeAll
+//	static void setUpBeforeClass() throws Exception {
+//	}
+//
+//	@AfterAll
+//	static void tearDownAfterClass() throws Exception {
+//	}
+//
+//	@BeforeEach
+//	void setUp() throws Exception {
+//	}
+//
+//	@AfterEach
+//	void tearDown() throws Exception {
+//	}
 
-	@AfterAll
-	static void tearDownAfterClass() throws Exception {
-	}
+//	@Test
+//	void testPayPalStrategy() {
+//		PayPalStrategy paypal2 = new PayPalStrategy("api1","lil","74125874125871");
+//		paypal2.getClass();
+//		assertNotNull(paypal2);
+//	}
 
-	@BeforeEach
-	void setUp() throws Exception {
-	}
-
-	@AfterEach
-	void tearDown() throws Exception {
-	}
-
+	
 	@Test
-	void testPayPalStrategy() {
-		PayPalStrategy paypal2 = new PayPalStrategy("api1","lil","74125874125871");
-		paypal2.getClass();
-		assertNotNull(paypal2);
+	void testPay() {
+		
+		double result = paypal.pay(50d);
+		assertEquals(250, result);
 	}
-
 	/*@Test
 	void testGetApi() {
 		if(paypal.getApi() != "") {
@@ -82,13 +89,13 @@ class PayPalStrategyTest {
 		paypal.setToken("777777771");
 	}*/
 
-	@Test
-	void testPay() {
-		paypal.pay(0);
-		if(paypal != null)
-			assertNull("Tiene valor: ", paypal);
-		else 
-			assertNotNull("Esta vacio: ", paypal);
-	}
+//	@Test
+//	void testPay() {
+//		paypal.pay(0);
+//		if(paypal != null)
+//			assertNull("Tiene valor: ", paypal);
+//		else 
+//			assertNotNull("Esta vacio: ", paypal);
+//	}
 
 }

@@ -14,33 +14,31 @@ class CreditCardStrategyTest {
 	   
 	CreditCardStrategy credCar1 = new CreditCardStrategy("Javi", "1122334455", "124", "02/11/2020");
 
-	@BeforeAll
-	static void setUpBeforeClass() throws Exception {
-	}
-
-	@AfterAll
-	static void tearDownAfterClass() throws Exception {
-	}
-
-	@BeforeEach
-	void setUp() throws Exception {
-	}
-
-	@AfterEach
-	void tearDown() throws Exception {
-	}
+	
+//	@BeforeAll
+//	static void setUpBeforeClass() throws Exception {
+//	}
+//
+//	@AfterAll
+//	static void tearDownAfterClass() throws Exception {
+//	}
+//
+//	@BeforeEach
+//	void setUp() throws Exception {
+//	}
+//
+//	@AfterEach
+//	void tearDown() throws Exception {
+//	}
 
 	@Test
-	void testCreditCardStrategy() {
+	void testPay() {
 		
-		CreditCardStrategy credCar2 = new CreditCardStrategy(null,null,null,null);
-
-		if(credCar1 != null) {
-			assertNull(credCar1);
-		}else {
-			assertNotNull(credCar1);
-		}
+		double result = credCar1.pay(50d);
+		assertEquals(100.0, result);
 	}
+
+	
 /*
 	@Test
 	void testGetName() {
@@ -105,11 +103,5 @@ class CreditCardStrategyTest {
 
 	}*/
 
-	@Test
-	void testPay() {
-		credCar1.pay(0);
-		
-		//assertEquals(credCar1.pay(0), 0);
-	}
 
 }
