@@ -1,19 +1,17 @@
 package com.example.conceptos.jordi_vicent_cutanda_perez;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
-import com.example.demo.patterns.behavioral.iterator.Book;
 
-import junit.framework.TestCase;
+import com.example.demo.patterns.behavioral.iterator.Book;
 
 @Nested
 @DisplayName("JUnitTestSampleListBooksTest")
-class IteratorTest extends TestCase {
+class IteratorTest {
 	private static final String LORE_IPSUM = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Id diam veunt praesent semper feugiat.";
 
 	@Test
@@ -23,7 +21,6 @@ class IteratorTest extends TestCase {
 
         List<Book> randomSampleBooks = addSampleListBooksTest(randomBooksToCreate);
         
-        assertEquals(randomBooksToCreate,randomSampleBooks.size());
         
         //TODO Add check fields
 	}

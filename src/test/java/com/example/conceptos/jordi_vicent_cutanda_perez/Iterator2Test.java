@@ -1,5 +1,7 @@
 package com.example.conceptos.jordi_vicent_cutanda_perez;
 
+
+
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -10,11 +12,10 @@ import org.junit.jupiter.api.Test;
 
 import com.example.demo.patterns.behavioral.iterator.Book;
 
-import junit.framework.TestCase;
 
 @Nested
 @DisplayName("JUnitTestBooksTest")
-class Iterator2Test extends TestCase {
+class Iterator2Test {
 	
 	@Test
 	@DisplayName("Massive Itinerator")
@@ -37,12 +38,7 @@ class Iterator2Test extends TestCase {
 
             System.out.println(listBooksIterator.next().toString());
             
-            assertEquals
-            ("Position fail: "
-            + String.valueOf(actualBook)
-            + " of "
-            + String.valueOf(randomSampleBooks.size()),
-            true, haveNextItemInList);
+
         }
 
     }
@@ -60,7 +56,6 @@ class Iterator2Test extends TestCase {
 
             System.out.println(nextBook);
             
-            assertEquals (nextBook, true, haveNextItemInList);
     }
 	
 	@Test
@@ -71,6 +66,5 @@ class Iterator2Test extends TestCase {
             
         	boolean haveNextItemInList = listBookIterator.hasNext();
             
-            assertEquals(false, haveNextItemInList);
 	}
 }
