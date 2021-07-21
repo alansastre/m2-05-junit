@@ -59,7 +59,8 @@ class SmartPhoneServiceTest {
 
 	@Test
 	void testFindOne() {
-		fail("Not yet implemented");
+		SmartPhone phone = sut.findOne(1L);
+		assertNotNull(phone);
 	}
 
 	@Test
@@ -72,16 +73,23 @@ class SmartPhoneServiceTest {
 				new Camera(2L, "front camera", 8.5));
 		
 		SmartPhone result = sut.save(phone1);
+		assertNotNull(result);
 	}
 
 	@Test
 	void testDelete() {
-		fail("Not yet implemented");
+		boolean result = sut.delete(1L);
+		assertTrue(result);
+		
+		result = sut.delete(1L);
+		assertFalse(result);
 	}
 
 	@Test
 	void testDeleteAll() {
-		fail("Not yet implemented");
+		sut.deleteAll();
+		List<SmartPhone> results = sut.findAll();
+		assertEquals(0, results.size());
 	}
 
 	@Test
