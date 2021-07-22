@@ -1,5 +1,6 @@
 package com.example.ivanmartin;
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotEquals;
 
 import java.time.LocalDateTime;
@@ -56,15 +57,16 @@ public class OrderTest extends BaseTest{
 	@Test
 	void OrderProduct() {
 		
-		List<Product> listaAux = order.getProducts();
-		List<Product> lista = order.getProducts();
+		assertEquals(0, order.getProducts().size());
 		
 		Product product =new Product();
 		
-		lista.add(product);
+		order.getProducts().add(product);
 		
-		order.setProducts(lista);
+
 		
-		assertNotEquals(order.getProducts().toString(), listaAux); 
+		assertEquals(1, order.getProducts().size());
+		
+
 	}
 }

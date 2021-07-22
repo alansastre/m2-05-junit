@@ -82,8 +82,10 @@ public class SmartPhoneServiceImpl implements SmartPhoneService{
      * @return
      */
     private Long getMaxSmartPhoneId() {
-    	if (smartphones.isEmpty())
-			return 0L;
+    	if (smartphones.isEmpty()) {
+    		return 0L;
+    	}
+    		
 
         return Collections.max(smartphones.entrySet(),
                 (entry1, entry2) -> (int) (entry1.getKey() - entry2.getKey())
