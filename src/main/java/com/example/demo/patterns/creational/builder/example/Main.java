@@ -13,6 +13,17 @@ public class Main {
 		Calendar calendar = new Calendar.Builder().setCalendarType("gregory").setDate(2021, 7, 7).build();
 		
 		
+		// posibilidades de testing del patron builder:
+		
+		// 1. cero parametros
+		
+		// 2. 1 parametro
+		
+		// 3. varios parametros
+		
+		// 4. todos los parametros
+		
+		// 5 . setter 
 	}
 
 }

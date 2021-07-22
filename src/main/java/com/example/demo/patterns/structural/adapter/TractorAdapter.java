@@ -11,7 +11,12 @@ public class TractorAdapter implements Movable{
 		} else {
 			this.tractor.changeMode(2);
 		}
-		
 	}
+	
+	public double getSpeed() {
+		return this.tractor.getSpeed();
+	}
+	
 
+	
 }

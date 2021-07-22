@@ -19,7 +19,7 @@ import org.junit.runner.RunWith;
 //@SelectClasses({NestedTest.class, ConditionalTest.class}) // varias clases
 
 // 3. filtro por etiquetas (tiene que estar también uno de los filtros anteriores)
-@IncludeTags("calculations") // filtra aquellos metodos que tengan @Tag("calculations")
+// @IncludeTags("calculations") // filtra aquellos metodos que tengan @Tag("calculations")
 @SuiteDisplayName("Suite de testing") // Nombre a mostrar de la suite
 public class AllTests {
 

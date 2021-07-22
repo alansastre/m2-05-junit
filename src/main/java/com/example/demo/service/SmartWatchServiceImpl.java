@@ -18,10 +18,11 @@ public class SmartWatchServiceImpl implements SmartWatchService{
 	/**
 	 * Emulates a database with java hashmap
 	 */
-    private static final Map<Long, SmartWatch> smartwatches = new HashMap<>();
+    private final Map<Long, SmartWatch> smartwatches = new HashMap<>();
 
-    static{ // demo data
-    	
+    
+    public SmartWatchServiceImpl() {
+    	// demo data
 		SmartWatch watch1 = new SmartWatch(1L, "Fitbit sense", 
 				new RAM(1L, "DDR4", 2),
 				new Battery(1L, 4500.0),
@@ -48,7 +49,7 @@ public class SmartWatchServiceImpl implements SmartWatchService{
 		smartwatches.put(2L, watch2);
     	smartwatches.put(3L, watch3);
     }
-    
+
     @Override
     public Integer count() {
         return smartwatches.keySet().size();
