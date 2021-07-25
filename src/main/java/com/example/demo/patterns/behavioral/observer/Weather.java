@@ -29,7 +29,7 @@ public class Weather {
     }
 
     // notificar del cambio de tiempo
-    private void notifyObservers(){
+    public void notifyObservers(){
         for (WeatherObserver observer: this.observers) {
             observer.update(this.currentWeather);
         }

@@ -20,6 +20,7 @@ public class SmartPhone implements WeatherObserver{
 
 	public void setNotificationsSmartPhone(List<String> notificationsSmartPhone) {
 		this.notificationsSmartPhone = notificationsSmartPhone;
+		
 	}
     
     
